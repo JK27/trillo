@@ -1,0 +1,104 @@
+/* -------------------------------------------------------- CONTAINER */
+.container {
+  max-width: 120rem; // If viewport is smaller, it will occupy 100%
+  margin: 8rem auto; // Centers container inside parent element
+  background-color: var(--color-grey-light-2);
+  box-shadow: var(--shadow-dark);
+
+  min-height: 50rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0; // Removes primary color background around edges of container
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* -------------------------------------------------------- HEADER */
+.header {
+  font-size: 1.4rem;
+  height: 7rem;
+  background-color: var(--color-white);
+  border-bottom: var(--line);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media only screen and (max-width: $bp-smallest) {
+    flex-wrap: wrap; // Brings search bar down to a new row
+    align-content: space-around;
+    height: 11rem;
+  }
+}
+
+/* -------------------------------------------------------- CONTENT */
+.content {
+  display: flex;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column; // Brings navigation to top of hotel view
+  }
+}
+
+/* -------------------------------------------------------- SIDEBAR */
+.sidebar {
+  background-color: var(--color-grey-dark-1);
+
+  flex: 0 0 18%; //  <'flex-grow'> <'flex-shrink'>? || <'flex-basis'>
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; // Pushes legal text to bottom of sidebar
+}
+
+/* -------------------------------------------------------- HOTEL VIEW */
+.hotel-view {
+  background-color: var(--color-white);
+
+  flex: 1; // Element will grow to occupy as much space as possible
+}
+
+/* ---------------------------------------------- DETAIL */
+.detail {
+  font-size: 1.4rem;
+  display: flex;
+  padding: 1.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--line);
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column; // Brings reviews underneath description
+  }
+}
+
+/* ---------------------------------------------- DESRIPTION */
+.description {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+}
+
+/* ---------------------------------------------- USER REVIEWS */
+.user-reviews {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
